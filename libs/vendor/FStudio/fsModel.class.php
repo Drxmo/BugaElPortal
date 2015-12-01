@@ -12,31 +12,31 @@ namespace FStudio;
  */
 class fsModel {
 
-    /**
-     * Atributo para manejar la instancia de la clase PDO
-     * @var \PDO
-     */
-    static private $instance = null;
+  /**
+   * Atributo para manejar la instancia de la clase PDO
+   * @var \PDO
+   */
+  static private $instance = null;
 
-    /**
-     * Obtiene la instance de la conexión a la base de datos
-     * @return \PDO
-     */
-    protected function getConnection(myConfig $config) {
-        if (self::$instance === null) {
+  /**
+   * Obtiene la instance de la conexión a la base de datos
+   * @return \PDO
+   */
+  protected function getConnection(myConfig $config) {
+    if (self::$instance === null) {
 
-            // para usar conexiones persistentes
-            $options = array(
-                \PDO::ATTR_PERSISTENT => true
-            );
+      // para usar conexiones persistentes
+      $options = array(
+          \PDO::ATTR_PERSISTENT => true
+      );
 
-            // crea la instancia de la conexión
-            self::$instance = new \PDO($config->getDsn(), $config->getUser(), $config->getPassword(), $options);
+      // crea la instancia de la conexión
+      self::$instance = new \PDO($config->getDsn(), $config->getUser(), $config->getPassword(), $options);
 
-            // asignación de atributos para el manejo de errores
-            self::$instance->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
-        }
-        return self::$instance;
+      // asignación de atributos para el manejo de errores
+      self::$instance->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
     }
+    return self::$instance;
+  }
 
 }
