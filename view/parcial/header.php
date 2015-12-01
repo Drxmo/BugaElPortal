@@ -18,13 +18,13 @@
 .headerX{
         position: relative;
         text-align: center;
-
+z-index: 99;
         font-size: 72px;
         line-height: 108px;
         height: 108px;
         background: #000000;
         color: #fff;
-        font-family:ralewayBold,Helvetica,Arial,sans-serif;
+        font-family:BankGothic Md BT,ralewayBold,Helvetica,Arial,sans-serif;
 
         // set animation
         -webkit-transition: all 0.7s ease;
@@ -64,6 +64,10 @@
 
 
     }
+    .floatRightX ul li a{
+    padding-right: 0px;
+    height: 0px;
+    top:0px}
     .iniciX{
         text-align: left;
     display: inline-block;
@@ -80,10 +84,29 @@
         margin: 0 auto;
         background-color: lavender;
     }
+    /*----------- responsive-start-here -----------*/
+/*----------- responsive-start-here -----------*/
+/*----------- responsive-start-here -----------*/
+
+@media (max-width:768px){
+    
+    .navbar-collapse{ ;}
+    .floatRightX{display:none
+    }
+    .navsub{display:none
+    }
+    
+}
+@media (max-width:838px){
+    
+    
+    .floatRightX ul li a{
+    display: none}
+}
 </style>
 
 
-<!-- Animacion -->
+
 <header class="headerX"><h1 class="h1X"><a class="TitleX" href="<?php echo $fsConfig->getUrl() ?>index.php/home/index" title="Destino Travel" rel="home"><span class="TitleX">BugaTravels</span></a></h1></header>
 <div class='containerX1 invisibleX'><div class='veilX2'></div></div>
 

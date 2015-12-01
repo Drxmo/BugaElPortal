@@ -26,3 +26,7 @@
   font-family:ralewaySemiBold;
   src:url(Raleway-SemiBold.ttf);
 }
+@font-face{
+  font-family:BankGothicMdBT;
+  src:url(bankgothic-md-bt-medium.ttf);
+}
