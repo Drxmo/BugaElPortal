@@ -23,10 +23,8 @@ class index extends controller {
             $this->signinCSS = $config->getUrl() . 'css/signin.css';
             $this->jqJS = $config->getUrl() . 'css/jquery-1.11.3.min.js';
             $this->btJS = $config->getUrl() . 'css/bootstrap.min.js';
-            $this->loginForm = $config->getUrl() . 'index.php/seguridad/login';
-            $this->registroURL = $config->getUrl() . 'index.php/usuario/registro';
-
-
+            $this->loginForm = $config->getUrl() . 'index.php/seguridad/loginUsuario';
+            $this->registroURL = $config->getUrl() . 'index.php/seguridad/registroUsuario';
             $this->defineView('home/seguridad', 'loginUsuario', 'html');
 //    include '../../view/home/seguridad/loginUsuario.html.php';
         }
