@@ -17,7 +17,7 @@ en
                 <input type="text" autocomplete="off" autofocus required placeholder="Usuario" class="form-control" id="inputUsuario" name="seguridad[user]">
                 <input type="password" required placeholder="Contraseña" class="form-control" id="inputPassword" name="seguridad[pass]">
                        <button type="submit" class="btn btn-lg btn-primary btn-block">Identificarse</button>
-                       <a href="http://localhost/destinoTravel/web/index.php/seguridad/registroUsuario.html.php" class="btn btn-lg btn-default btn-block">Registrarse</a>
+                       <a href="<?php echo $registroURL ?>" class="btn btn-lg btn-default btn-block">Registrarse</a>
                 <?php if (isset($_SESSION['usuarioInvalido'])=== true): ?>
                 <br>
                 <div class="alert alert-danger" role="alert"><?php echo $_SESSION['usuarioInvalido'] ?></div>

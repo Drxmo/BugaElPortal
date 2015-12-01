@@ -11,11 +11,11 @@ use FStudio\interfaces\fsAction as action;
  *
  * @author Alzate
  */
-class login extends controller implements action {
+class loginUsuario extends controller implements action {
 
     public function execute() {
         $config = $this->getConfig();
-        if (filter_has_var(INPUT_POST, 'login') === true) {
+        if (filter_has_var(INPUT_POST, 'login') === TRUE) {
             $user = filter_input_array(INPUT_POST)['login']['user'];
             $password = filter_input_array(INPUT_POST)['login']['password'];
 
@@ -37,6 +37,8 @@ class login extends controller implements action {
                 exit();
             }
         }
+        header("Location:" . $config->getUrl() . "index.php");
+        exit();
     }
 
 }
