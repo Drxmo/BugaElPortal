@@ -1,46 +1,37 @@
-<?php include_once $fsConfig->getPath() . 'view/parcial/head.php' ?>
-<?php include_once $fsConfig->getPath() . 'view/parcial/header.php' ?>
-
-<section class="main container">
-  <div class="row">
-    <div class="jumbotron boxuserdos">
-      <form method="POST" action="<?php echo $fsConfig->getUrl() ?>index.php/home/indexUsuario" class="form-horizontal">
-        <div class="form-group">
-          <label class="control-label col-xs-3">Nombre:</label>
-          <div class="col-xs-9">
-            <input type="text" class="form-control" placeholder="Nombre">
-          </div>
-        </div>        
-        <div class="form-group">
-          <label class="control-label col-xs-3">Password:</label>
-          <div class="col-xs-9">
-            <input type="password" class="form-control" id="inputPassword" placeholder="Password">
-          </div>
+<html>
+    <head>
+        <link rel="stylesheet" href="<?php echo $btCSS?>">
+        <link rel="stylesheet" href="<?php echo $bttCSS?>">
+        <link rel="stylesheet" href="<?php echo $signinCSS?>">
+         <link rel="stylesheet" href="<?php echo $fsConfig->getUrl()?>css/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="<?php echo $fsConfig->getUrl() ?>css/style.css">
+    <link rel="stylesheet" href="<?php echo $fsConfig->getUrl()?>css/fonts/style.css">
+    <link rel="stylesheet" href="<?php echo $fsConfig->getUrl()?>css/estilox.css">
+<!--        <li><a href="<?php echo $_SESSION['user']; ?>">Bienvenido</a></li>-->
+en 
+    </head>
+    <body>
+        <div class="container container-fluid">
+            <form class="form-signin" method="post" action="<?php echo $loginForm ?>">
+                <h2 class="form-signin-heading">Datos de Usuario</h2>
+                <input type="text" autocomplete="off" autofocus required placeholder="Usuario" class="form-control" id="inputUsuario" name="seguridad[user]">
+                <input type="password" required placeholder="Contraseña" class="form-control" id="inputPassword" name="seguridad[pass]">
+                       <button type="submit" class="btn btn-lg btn-primary btn-block">Identificarse</button>
+                       <a href="http://localhost/destinoTravel/web/index.php/seguridad/registroUsuario.html.php" class="btn btn-lg btn-default btn-block">Registrarse</a>
+                <?php if (isset($_SESSION['usuarioInvalido'])=== true): ?>
+                <br>
+                <div class="alert alert-danger" role="alert"><?php echo $_SESSION['usuarioInvalido'] ?></div>
+                <?php unset($_SESSION['usuarioInvalido']) ?>
+                <?php endif ?>
+                <?php if (isset($_SESSION['registroSuccess'])=== true): ?>
+                <br>
+                <div class="alert alert-success" role="alert"><?php echo $_SESSION['registroSuccess'] ?></div>
+                <?php unset($_SESSION['registroSuccess']) ?>
+                <?php endif ?>
+            </form>  
         </div>
-        <div class="form-group">
-          <label class="control-label col-xs-3">Confirmar Password:</label>
-          <div class="col-xs-9">
-            <input type="password" class="form-control" placeholder="Confirmar Password">
-          </div>
-        </div>         
-        <div class="form-group">
-          <div class="col-xs-offset-3 col-xs-9">
-            <label class="checkbox-inline">
-              <input type="checkbox" value="agree">Recordarme
-            </label>
-          </div>
-        </div>
-        <br>
-        <div class="form-group">
-          <div class="col-xs-offset-3 col-xs-9">
-            <input type="submit" class="btn btn-default" value="Ingresar">
-            <a class="btn btn-default btn-cancel" value="Guardar">Cancelar</a>
-          </div>
-        </div>
-      </form>
-    </div>
-  </div>
-</section>
-
-<?php include_once $fsConfig->getPath() . 'view/parcial/footer.php' ?>
-<?php include_once $fsConfig->getPath() . 'view/parcial/foot.php' ?>
+        <script src="<?php echo $jqJS ?>"></script>
+        <script src="<?php echo $btJS ?>"></script>
+        
+    </body>
+</html>

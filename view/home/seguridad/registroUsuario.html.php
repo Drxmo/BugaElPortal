@@ -8,13 +8,13 @@
         <div class="form-group">
           <label class="control-label col-xs-3">Nombre:</label>
           <div class="col-xs-9">
-            <input type="text" class="form-control" placeholder="Nombre">
+            <input type="text" class="form-control" id="nombre" placeholder="Nombre">
           </div>
         </div>
         <div class="form-group">
           <label class="control-label col-xs-3">Apellido:</label>
           <div class="col-xs-9">
-            <input type="text" class="form-control" placeholder="Apellido">
+            <input type="text" class="form-control" id="apellido" placeholder="Apellido">
           </div>
         </div> 
         <div class="form-group">
@@ -69,7 +69,7 @@
         <div class="form-group">
           <div class="col-xs-offset-3 col-xs-9">
             <label class="checkbox-inline">
-              <input type="checkbox" value="news">Recivir Notificaciones.
+              <input type="checkbox" value="news">Recibir Notificaciones.
             </label>
           </div>
         </div>

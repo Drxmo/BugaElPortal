@@ -1,15 +1,19 @@
 <?php
+
+
 require_once '../model/base/usuarioBaseTable.class.php';
 require_once '../model/usuarioTable.class.php';
 require_once '../model/base/datoUsuarioBaseTable.class.php';
 require_once '../model/datoUsuarioTable.class.php';
+
+
 use FStudio\fsController as controller;
 use FStudio\interfaces\fsAction as action;
 
 /**
  * Description of registrar
  *
- * @author Alzate
+ * @author TPS CésarD
  */
 
 class registrar extends controller implements action {
