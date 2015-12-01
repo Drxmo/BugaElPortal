@@ -1,9 +1,9 @@
 <?php
 
-namespace portalProject\model\base;
+namespace FStudio\model\base;
 
-use portalProject\fsModel as model;
-use portalProject\myConfig as config;
+use FStudio\fsModel as model;
+use FStudio\myConfig as config;
 
 /**
  * Description of usuarioBaseTable

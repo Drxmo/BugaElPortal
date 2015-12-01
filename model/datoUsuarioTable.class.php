@@ -1,6 +1,6 @@
 <?php
 
-use portalProject\model\base\datoUsuarioBaseTable;
+use FStudio\model\base\datoUsuarioBaseTable;
 
 /**
  * Description of datoUsuarioTable

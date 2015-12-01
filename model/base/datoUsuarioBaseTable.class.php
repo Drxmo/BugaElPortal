@@ -1,9 +1,9 @@
 <?php
 
-namespace portalProject\model\base;
+namespace FStudio\model\base;
 
-use portalProject\fsModel as model;
-use portalProject\myConfig as config;
+use FStudio\fsModel as model;
+use FStudio\myConfig as config;
 
 /**
  * Description of datoUsuarioBaseTable
@@ -27,7 +27,7 @@ class datoUsuarioBaseTable extends model {
     const TWITTER = 'dus_twitter';
     const TWITTER_LENGTH = 80;
     const GOOGLE_PLUS = 'dus_google_plus';
-    const FACEBOOK_LENGTH = 80;
+    const GOOGLE_PLUS_LENGTH = 80;
     const AVATAR = 'dus_avatar';
     const CREATED_AT = 'dus_created_at';
     const UPDATED_AT = 'dus_updated_at';
