@@ -91,7 +91,7 @@ class usuarioBaseTable extends model {
     }
 
     public function setPassword($password) {
-        $this->password = $password;
+        $this->password = hash('md5', $password);
     }
 
     public function setActivado($activado) {

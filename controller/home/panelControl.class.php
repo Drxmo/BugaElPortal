@@ -1,4 +1,5 @@
 <?php
+
 use FStudio\fsController as controller;
 
 /**
@@ -7,7 +8,9 @@ use FStudio\fsController as controller;
  * @author balem
  */
 class panelControl extends controller {
-   public function execute() {
-    $this->defineView('home/usuario', 'panelControl', 'html');
-  }
+
+    public function execute() {
+        $this->defineView('home/usuario', 'panelControl', 'html');
+    }
+
 }

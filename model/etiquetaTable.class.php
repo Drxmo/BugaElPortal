@@ -3,7 +3,7 @@
 use proyectoPortal\model\base\etiquetaBaseTable;
 
 class etiquetaTable extends etiquetaBaseTable {
-    
+
     public function getAll() {
         $conn = $this->getConnection($this->config);
         $sql = 'SELECT eti_id AS id, eti_nombre AS nombre, sit_id AS sitio_id, '
@@ -16,6 +16,7 @@ class etiquetaTable extends etiquetaBaseTable {
         $answer->execute();
         return ($answer->rowCount() > 0) ? $answer->fetchAll(PDO::FETCH_OBJ) : false;
     }
+
     public function getById($id = null) {
         $conn = $this->getConnection($this->config);
         $sql = 'SELECT eti_id AS id, eti_nombre AS nombre, sit_id AS sitio_id, '
@@ -31,6 +32,7 @@ class etiquetaTable extends etiquetaBaseTable {
         $answer->execute($params);
         return ($answer->rowCount() > 0) ? $answer->fetchAll(PDO::FETCH_OBJ) : false;
     }
+
     public function save() {
         $conn = $this->getConnection($this->config);
         $sql = 'INSERT INTO etiqueta '
@@ -47,6 +49,7 @@ class etiquetaTable extends etiquetaBaseTable {
         $this->setId($conn->lastInsertId());
         return true;
     }
+
     public function update() {
         $conn = $this->getConnection($this->config);
         $sql = 'UPDATE bdp_etiqueta SET '
@@ -64,6 +67,7 @@ class etiquetaTable extends etiquetaBaseTable {
         $answer->execute($params);
         return true;
     }
+
     public function delete($deleteLogical = true) {
         $conn = $this->getConnection($this->config);
         $params = array(
@@ -83,5 +87,5 @@ class etiquetaTable extends etiquetaBaseTable {
         $answer->execute($params);
         return true;
     }
-}
 
+}

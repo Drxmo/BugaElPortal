@@ -1,4 +1,5 @@
 <?php
+
 use FStudio\fsController as controller;
 
 /**
@@ -6,8 +7,10 @@ use FStudio\fsController as controller;
  *
  * @author balem
  */
-class registroUsuario extends controller{
-  public function execute() {
-    $this->defineView('home/seguridad', 'registroUsuario', 'html');
-  }
+class registroUsuario extends controller {
+
+    public function execute() {
+        $this->defineView('home/seguridad', 'registroUsuario', 'html');
+    }
+
 }

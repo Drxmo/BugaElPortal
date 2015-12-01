@@ -5,15 +5,15 @@ use FStudio\myConfig as config;
 $config = new config();
 
 //$config->setPath('/var/www/html/teamPortal/');
-$config->setPath('C:/wamp/www/destinoTravel/');
+$config->setPath('C:/xampp/htdocs/destinoTravel/');
 $config->setUrl('http://localhost/destinoTravel/web/');
 
 $config->setDriver('mysql');
 $config->setHost('localhost');
 $config->setPort(3306);
-$config->setDbName('usuarios');
+$config->setDbName('tpsbuga');
 $config->setUser('root');
-$config->setPassword('1321245');
+$config->setPassword('root');
 $config->setDsn(
         $config->getDriver()
         . ':host=' . $config->getHost()

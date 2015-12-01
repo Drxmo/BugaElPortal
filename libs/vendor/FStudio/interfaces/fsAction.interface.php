@@ -11,8 +11,8 @@ namespace FStudio\interfaces;
  */
 interface fsAction {
 
-  /**
-   * Método principal para ejecutar una acción
-   */
-  public function execute();
+    /**
+     * Método principal para ejecutar una acción
+     */
+    public function execute();
 }

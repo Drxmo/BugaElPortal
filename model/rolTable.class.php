@@ -1,5 +1,7 @@
 <?php
+
 use portalProject\model\base\rolBaseTable;
+
 /**
  * Description of rolTable
  *
@@ -7,7 +9,7 @@ use portalProject\model\base\rolBaseTable;
  */
 class rolTable extends rolBaseTable {
 
-  public function getAll() {
+    public function getAll() {
         $conn = $this->getConnection($this->config);
         $sql = 'SELECT rol_id AS id, rol_rol AS rol, rol_created_at AS created_at, '
                 . 'rol_updated_at AS updated_at, rol_deleted_at AS deleted_at '
@@ -18,6 +20,7 @@ class rolTable extends rolBaseTable {
         $answer->execute();
         return ($answer->rowCount() > 0) ? $answer->fetchAll(PDO::FETCH_OBJ) : false;
     }
+
     public function getById($id = null) {
         $conn = $this->getConnection($this->config);
         $sql = 'SELECT rol_id AS id, rol_rol AS rol, rol_created_at AS created_at, '
@@ -32,6 +35,7 @@ class rolTable extends rolBaseTable {
         $answer->execute($params);
         return ($answer->rowCount() > 0) ? $answer->fetchAll(PDO::FETCH_OBJ) : false;
     }
+
     public function save() {
         $conn = $this->getConnection($this->config);
         $sql = 'INSERT INTO rol '
@@ -46,6 +50,7 @@ class rolTable extends rolBaseTable {
         $this->setId($conn->lastInsertId());
         return true;
     }
+
     public function update() {
         $conn = $this->getConnection($this->config);
         $sql = 'UPDATE bdp_rol SET '
@@ -59,6 +64,7 @@ class rolTable extends rolBaseTable {
         $answer->execute($params);
         return true;
     }
+
     public function delete($deleteLogical = true) {
         $conn = $this->getConnection($this->config);
         $params = array(
@@ -78,4 +84,5 @@ class rolTable extends rolBaseTable {
         $answer->execute($params);
         return true;
     }
+
 }
