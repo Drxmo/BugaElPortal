@@ -6,7 +6,6 @@ $config = new config();
 
 //$config->setPath('/var/www/html/destinoTravel/');
 //$config->setPath('C:/wamp/www/destinoTravel/');
-$config->setPath('/var/www/html/teamPortal/');
 $config->setPath('C:/xampp/htdocs/destinoTravel/');
 $config->setUrl('http://localhost/destinoTravel/web/');
 
@@ -16,6 +15,7 @@ $config->setPort(3306);
 $config->setDbName('tpsbuga2015');
 $config->setUser('root');
 $config->setPassword('');
+
 $config->setDsn(
         $config->getDriver()
         . ':host=' . $config->getHost()
