@@ -4,8 +4,9 @@ use FStudio\myConfig as config;
 
 $config = new config();
 
-//$config->setPath('/var/www/html/teamPortal/');
-$config->setPath('C:/wamp/www/destinoTravel/');
+//$config->setPath('/var/www/html/destinoTravel/');
+//$config->setPath('C:/wamp/www/destinoTravel/');
+$config->setPath('C:/xampp/htdocs/destinoTravel/');
 $config->setUrl('http://localhost/destinoTravel/web/');
 
 $config->setDriver('mysql');
