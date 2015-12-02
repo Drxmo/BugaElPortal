@@ -95,7 +95,6 @@ class sitioTable extends sitioBaseTable {
             ':twitter' => $this->getTwitter(),
             ':googleplus' => $this->getGoogleplus(),
             ':id' => $this->getId(),
-
         );
         $answer = $conn->prepare($sql);
         $answer->execute($params);

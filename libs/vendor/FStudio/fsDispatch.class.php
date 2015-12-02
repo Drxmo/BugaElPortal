@@ -53,7 +53,7 @@ class fsDispatch {
    * @var fsController
    */
   protected $controller;
-  
+
   /**
    * Instancia de la clase de la vista
    * @author Julian Lasso <ingeniero.julianlasso@gmail.com>

@@ -98,11 +98,11 @@ class fsView {
   private function getFileView() {
     return $this->config->getPath() . 'view/' . $this->module . '/' . $this->view . '.' . $this->format . '.php';
   }
-  
+
   public function setConfig(myConfig $config) {
     $this->config = $config;
   }
-  
+
   public function setModule($module) {
     $this->module = $module;
   }
