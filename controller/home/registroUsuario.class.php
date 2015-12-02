@@ -12,12 +12,12 @@ class registroUsuario extends controller implements action {
 
   public function execute() {
     $config = $this->getConfig();
-    $index=$config->getUrl().'index.php';
-    
-    if(isset($_SESSION['user'])===TRUE){
+    $index = $config->getUrl() . 'index.php';
+
+    if (isset($_SESSION['user']) === TRUE) {
       header("Location: $index");
       exit();
-    }elseif (filter_has_var(INPUT_POST, 'registro') === TRUE) {
+    } elseif (filter_has_var(INPUT_POST, 'registro') === TRUE) {
       $registro = filter_input_array(INPUT_POST)['registro'];
       $this->validateInsert($registro);
 

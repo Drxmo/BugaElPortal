@@ -13,5 +13,5 @@ use FStudio\fsConfig as config;
  * @version 1.0.0
  */
 class myConfig extends config {
-    
+  
 }

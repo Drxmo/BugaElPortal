@@ -14,7 +14,7 @@ $config->setHost('localhost');
 $config->setPort(3306);
 $config->setDbName('tpsbuga2015');
 $config->setUser('root');
-$config->setPassword('');
+$config->setPassword('root');
 
 $config->setDsn(
         $config->getDriver()

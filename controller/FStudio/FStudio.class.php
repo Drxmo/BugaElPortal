@@ -12,14 +12,14 @@ use FStudio\fsController as controller;
  */
 class FStudio extends controller {
 
-    /**
-     * Método principal para la ejecución visual de la excepción
-     * @version 1.0.0
-     * @param PDOException $exc
-     */
-    public function exception(PDOException $exc) {
-        $this->exc = $exc;
-        $this->defineView('FStudio', 'exception', 'html');
-    }
+  /**
+   * Método principal para la ejecución visual de la excepción
+   * @version 1.0.0
+   * @param PDOException $exc
+   */
+  public function exception(PDOException $exc) {
+    $this->exc = $exc;
+    $this->defineView('FStudio', 'exception', 'html');
+  }
 
 }
