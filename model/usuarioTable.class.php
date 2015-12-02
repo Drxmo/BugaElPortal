@@ -2,11 +2,6 @@
 
 use FStudio\model\base\usuarioBaseTable;
 
-/**
- * Description of usuarioTable
- *
- * @author balem
- */
 class usuarioTable extends usuarioBaseTable {
 
     public function getAll() {
@@ -52,6 +47,7 @@ class usuarioTable extends usuarioBaseTable {
         );
         $answer = $conn->prepare($sql);
         $answer->execute($params);
+        $this->setId($params[':id']);
         $this->setId($conn->lastInsertId());
         return true;
     }
@@ -98,7 +94,7 @@ class usuarioTable extends usuarioBaseTable {
 
     public function verificarUsuario() {
         $conn = $this->getConnection($this->config);
-        $sql = "SELECT id FROM usuario WHERE usu_deleted_at IS NULL AND usu_activado='t' AND ((usu_usuario = :usuario AND usu_password = :password)";
+        $sql = "SELECT usu_id FROM bdp_usuario WHERE usu_deleted_at IS NULL AND usu_activado='1' AND ((usu_usuario = :usuario AND usu_password = :password))";
         $params = array(
             ':usuario' => $this->getUsuario(),
             ':password' => $this->getPassword()
@@ -110,12 +106,12 @@ class usuarioTable extends usuarioBaseTable {
 
     public function getDataByUserPassword() {
         $conn = $this->getConnection($this->config);
-        $sql = "SELECT bdp_usuario.usu_id AS id,"
-                . "dus_nombre AS nombre,"
-                . "dus_apellidos AS apellidos,"
-                . "FROM bdp_usuario INNER JOIN bdp_dato_usuario ON bdp_usuario.usu_id=bdp_dato_usuario.dus_id WHERE (bdp_usuario.usu_deleted_at "
-                . "IS NULL AND bdp_usuario.usu_activado = '1') AND bdp_dato_usuario.dus_deleted_at IS NULL "
-                . "AND (usu_usuario = :usuario AND usu_password = :password)";
+        $sql = "SELECT bdp_usuario.usu_id AS id, "
+            . "dus_nombre AS nombre, "
+            . "dus_apellidos AS apellidos "
+            . "FROM bdp_usuario INNER JOIN bdp_dato_usuario ON bdp_usuario.usu_id=bdp_dato_usuario.dus_id WHERE (bdp_usuario.usu_deleted_at "
+            . "IS NULL AND bdp_usuario.usu_activado = true) AND bdp_dato_usuario.dus_deleted_at IS NULL "
+            . "AND (usu_usuario = :usuario AND usu_password = :password)";
         $params = array(
             ':usuario' => $this->getUsuario(),
             ':password' => $this->getPassword()

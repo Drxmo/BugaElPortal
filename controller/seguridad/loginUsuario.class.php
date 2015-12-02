@@ -6,28 +6,25 @@ require_once '../model/usuarioTable.class.php';
 use FStudio\fsController as controller;
 use FStudio\interfaces\fsAction as action;
 
-/**
- * Description of login
- *
- * @author Alzate
- */
 class loginUsuario extends controller implements action {
 
     public function execute() {
         $config = $this->getConfig();
-        if (filter_has_var(INPUT_POST, 'login') === TRUE) {
-            $user = filter_input_array(INPUT_POST)['login']['user'];
-            $password = filter_input_array(INPUT_POST)['login']['password'];
+        if (filter_has_var(INPUT_POST, 'seguridad') === TRUE) {
+            $user = filter_input_array(INPUT_POST)['seguridad']['user'];
+            $password = filter_input_array(INPUT_POST)['seguridad']['pass'];
 
             $usuario = new usuarioTable($config);
             $usuario->setUsuario($user);
             $usuario->setPassword($password);
 
             if ($usuario->verificarUsuario() === true) {
-                $datosUsuario = $usuario->getDataByUserPassword(); //getDataByUserPassword();
-                if ($datosUsuario !== false) {
-                    $_SESSION['user']['id'] = $datosUsuario->id;
-                    $_SESSION['user']['nombre'] = $datosUsuario->nombre;
+                $datoUsuario = $usuario->getDataByUserPassword(); //getDataByUserPassword();
+                if ($datoUsuario === false) {
+                    $_SESSION['user']['id'] = $datoUsuario->id;
+                    $_SESSION['user']['nombre'] = $datoUsuario->nombre;
+                    header("Location:" . $config->getUrl() . "index.php");
+                    exit();
                 } else {
                     throw new Exception('Ocurrio un error usuario no existente');
                 }

@@ -7,7 +7,7 @@ use FStudio\fsController as controller;
  *
  * @author Drx
  */
-class index extends controller {
+class index extends controller implements action{
 
     public function execute() {
         $config = $this->getConfig();

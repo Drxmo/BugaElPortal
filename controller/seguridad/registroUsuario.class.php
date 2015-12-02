@@ -8,17 +8,12 @@ require_once '../model/datoUsuarioTable.class.php';
 use FStudio\fsController as controller;
 use FStudio\interfaces\fsAction as action;
 
-/**
- * Description of registrar
- *
- * @author TPS CésarD
- */
 class registroUsuario extends controller implements action {
 
     public function execute() {
-        $config = $this->getConfig();
-
-        if (filter_has_var(INPUT_POST, 'registro') === true) {
+               if (filter_has_var(INPUT_POST, 'registro') === true) {
+                   
+              $config = $this->getConfig();       
             $registro = filter_input_array(INPUT_POST)['registro'];
 
             $usuario = new usuarioTable($config);
@@ -40,6 +35,11 @@ class registroUsuario extends controller implements action {
             $datoUsuario->setGenero($registro['genero']);
             $datoUsuario->save();
             $_SESSION['registroSuccess'] = 'Usuario registrado exitosamente';
+             header("Location:" . $config->getUrl() . "index.php/home/loginUsuario");
+      exit();
+       } else {
+            $this->formulario = $this->getConfig()->getUrl() . 'index.php/seguridad/registroUsuario';
+      $this->defineView('home/seguridad', 'registroUsuario', 'html');
         }
         header("Location:" . $config->getUrl() . "index.php/home/loginUsuario");
         exit();

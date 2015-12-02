@@ -11,9 +11,9 @@ $config->setUrl('http://localhost/destinoTravel/web/');
 $config->setDriver('mysql');
 $config->setHost('localhost');
 $config->setPort(3306);
-$config->setDbName('usuarios');
+$config->setDbName('tpsbuga2015');
 $config->setUser('root');
-$config->setPassword('1321245');
+$config->setPassword('');
 $config->setDsn(
         $config->getDriver()
         . ':host=' . $config->getHost()
@@ -24,7 +24,7 @@ $config->setDsn(
 $config->setSessionName('FStudio');
 
 $config->setDefaultModule('home');
-$config->setDefaultAction('index');
+$config->setDefaultAction('loginUsuario');
 
 //$config->setPlugins(array(
 //    'fsEjemplo1Plugin',

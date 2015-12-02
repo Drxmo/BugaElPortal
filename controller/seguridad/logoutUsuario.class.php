@@ -15,7 +15,10 @@ class logOut extends controller implements action {
         if (isset($_SESSION['user']) === TRUE) {
             unset($_SESSION['user']);
         }
-        header("Location:" . $config->getUrl() . "index.php");
+        $config = $this->getConfig();
+        $index = $config->getUrl().'index.php';
+                header("location: $index");
+                exit();
     }
 
 }

@@ -1,5 +1,6 @@
-<html>
-    <head>
+<?php include_once $fsConfig->getPath() . 'view/parcial/head.php' ?>
+
+
         <link rel="stylesheet" href="<?php echo $btCSS?>">
         <link rel="stylesheet" href="<?php echo $bttCSS?>">
         <link rel="stylesheet" href="<?php echo $signinCSS?>">
